@@ -86,7 +86,20 @@ Create providers.jsx file inside app folder
 
 Wagmi is for read from and write to blockchain
 
+## Moralis
 
+```
+yarn add moralis react-moralis
+```
 
+Go to https://www.npmjs.com/package/react-moralis
 
+Then install Moralis
+
+```
+yarn add moralis-v1 react-moralis
+```
+
+    // If already web3Enabled do nothing, if not enableWeb3()
+    // But it's annoying because when we disconnect and then press refresh in browser, we get a metamask popup
 
