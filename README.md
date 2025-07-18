@@ -34,3 +34,57 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Create a next js app
+
+To Create a nextJs Application
+
+```
+pnpm create next-app@latest
+```
+
+## Connect our wallet with a nicer UI
+
+Go to https://rainbowkit.com/
+
+```
+npm init @rainbow-me/rainbowkit@latest
+```
+or
+```
+pnpm add @rainbow-me/rainbowkit@latest
+```
+or
+```
+pnpm add @rainbow-me/rainbowkit@2.2.4
+```
+
+Go to docs and Install RainbowKit and its peer dependencies, wagmi, viem, and @tanstack/react-query.
+
+```
+npm install @rainbow-me/rainbowkit wagmi viem@2.x @tanstack/react-query
+```
+
+Create rainbowKitConfig.jsx file in src folder and add configs
+
+Go to Installation -> WalletConnect Cloud
+
+It will redirect to reown (https://dashboard.reown.com/sign-in)
+
+Reown is a company that connect our wallet to our application
+
+Copy the project Id
+
+Create a new file called .env.local, the paste it as NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID
+
+Add it for the projectId of rainbowKitConfig.jsx file
+
+## Create providers
+
+Create providers.jsx file inside app folder
+
+
+
+
+
