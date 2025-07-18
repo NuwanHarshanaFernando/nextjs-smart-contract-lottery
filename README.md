@@ -103,3 +103,45 @@ yarn add moralis-v1 react-moralis
     // If already web3Enabled do nothing, if not enableWeb3()
     // But it's annoying because when we disconnect and then press refresh in browser, we get a metamask popup
 
+Add This to onClick function of Connect button
+
+```
+    window.localStorage.setItem("connected", "injected")
+```
+
+```
+if (typeof window !== "undefined") {
+                        window.localStorage.setItem("connected", "injected")
+}
+```
+
+Add this code inside useEffect
+
+```
+  if (typeof window !== "undefined") {
+            if (window.localStorage.getItem("connected")) {
+                enableWeb3()
+            }
+        }
+```
+
+Now if already connected to a metamask account, and refresh we didn't get the metamask wallet popup.
+But after disconnect accounts and then refresh browser, 
+We get that annoying metamask wallet popup
+
+So to overcome this issue, we have to add another useEfect to see if we disconnected
+
+```
+ useEffect(() => {
+        Moralis.onAccountChanged((account) => {
+            console.log(`Account changed to ${account}`)
+            if (account == null) {
+                window.localStorage.removeItem("connected")
+                deactivateWeb3()
+                console.log("Null account found")
+            }
+        })
+    }, [])
+```
+
+
