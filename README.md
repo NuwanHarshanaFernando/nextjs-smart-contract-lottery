@@ -84,6 +84,8 @@ Add it for the projectId of rainbowKitConfig.jsx file
 
 Create providers.jsx file inside app folder
 
+Wagmi is for read from and write to blockchain
+
 
 
 
